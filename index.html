@@ -19,7 +19,7 @@
     btn.addEventListener('click', function() {
       main();
     })
-    function main() {
+    async function main() {
       const searchVal = searchBox.value;
       let searchStr;
       if (searchVal) {
@@ -27,16 +27,9 @@
       } else {
         searchStr = 'cats';
       }
-      fetch('https://api.giphy.com/v1/gifs/translate?api_key=KNVWla7Z7WXqYzx2YqbadGQXLpN0nCMn&s=' + searchStr, {mode: 'cors'})
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(response) {
-        img.src = response.data.images.original.url;
-      })
-      .catch(function(err) {
-        console.error('Could not find a GIPHY that matched your search');
-      });
+      const response = await fetch('https://api.giphy.com/v1/gifs/translate?api_key=KNVWla7Z7WXqYzx2YqbadGQXLpN0nCMn&s=' + searchStr, {mode: 'cors'})
+      const srchData = await response.json();
+      img.src = srchData.data.images.original.url;
     }
     main();
   </script>
