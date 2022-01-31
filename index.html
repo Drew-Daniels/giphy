@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <input type="text" placeholder="Type your GIPHY search string here">
+  <button></button>
+  <img src="#">
+  <script>
+    const searchBox = document.querySelector('input');
+    const img = document.querySelector('img');
+    const btn = document.querySelector('button');
+    const btnText = document.createElement('span');
+    btnText.innerText = "Click Me to Get a new GIPHY image";
+    btn.appendChild(btnText);
+    btn.addEventListener('click', function() {
+      main();
+    })
+    function main() {
+      const searchVal = searchBox.value;
+      let searchStr;
+      if (searchVal) {
+        searchStr = searchVal;
+      } else {
+        searchStr = 'cats';
+      }
+      fetch('https://api.giphy.com/v1/gifs/translate?api_key=KNVWla7Z7WXqYzx2YqbadGQXLpN0nCMn&s=' + searchStr, {mode: 'cors'})
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(response) {
+        img.src = response.data.images.original.url;
+      })
+      .catch(function(err) {
+        console.error('Could not find a GIPHY that matched your search');
+      });
+    }
+    main();
+  </script>
+</body>
+</html>
