@@ -79,11 +79,16 @@ html, body {
   flex-direction: column;
   align-items: center;
   padding-top: 1em;
-  height: 5em;
+  height: 6em;
 }
 
 .github-icon {
   height: 2em;
+  margin-top: 0.5em;
+}
+
+.github-profile-container {
+  margin: 0.5em 0;
 }
 
 .input-base {
