@@ -16,6 +16,16 @@
   align-items: center;
   flex-grow: 1;
 }
+.img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30em;
+  width: 30em;
+}
+.img-container > *{
+  object-fit: contain;
+}
 .footer {
   display: flex;
   flex-direction: column;
@@ -41,5 +51,5 @@
 .ui-container {
   display: flex;
   flex-direction: column;
-  padding-bottom: 1em;
+  padding: 1em 0;
 }

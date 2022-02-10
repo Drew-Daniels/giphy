@@ -3,7 +3,7 @@ const img = document.querySelector('img');
 const btn = document.querySelector('button');
 const btnText = document.createElement('span');
 
-btnText.innerText = "Click Me to Get a new GIPHY image";
+btnText.innerText = "Click me to get a new GIPHY image";
 btn.appendChild(btnText);
 btn.addEventListener('click', function() {
   main();
