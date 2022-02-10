@@ -1,0 +1,41 @@
+@use 'reset';
+@use 'font';
+
+* > {
+  box-sizing: border-box;
+}
+.content-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1em;
+  height: 5em;
+}
+.github-icon {
+  height: 2em;
+}
+.input-base {
+  height: 2em;
+  width: 19.5em;
+}
+.btn-base {
+  height: 2em;
+  width: 20em;
+}
+.ui-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1em;
+}
